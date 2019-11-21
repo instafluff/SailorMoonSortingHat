@@ -1,0 +1,30 @@
+{
+  "name": "sailormoonsortinghat",
+  "version": "1.0.0",
+  "description": "Sailor Moon Personality Quiz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/instafluff/SailorMoonSortingHat.git"
+  },
+  "keywords": [
+    "Instafluff",
+    "Sailor Moon",
+    "personality",
+    "quiz",
+    "mbti",
+    "myers briggs"
+  ],
+  "author": "Instafluff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/instafluff/SailorMoonSortingHat/issues"
+  },
+  "homepage": "https://github.com/instafluff/SailorMoonSortingHat#readme",
+  "dependencies": {
+    "webwebweb": "^1.1.6"
+  }
+}
