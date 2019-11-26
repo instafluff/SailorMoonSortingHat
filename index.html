@@ -5,18 +5,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div class="container">
+      <div class="text-center">
+        <img class="logo" src="web/sailormoon-logo.png" alt="Sailor Moon Logo">
+      </div>
       <div id="questions">
+          <img src="web/sailormooncast.jpg" class="card-img-top" alt="Sailor Moon Image">
         <div class="card">
-          <img src="web/sailormoon.jpg" class="card-img-top" alt="Sailor Moon Image">
+          
           <div class="card-body">
             <h5 id="q-title" class="card-title">[QUESTION]</h5>
             <p class="card-text justify">
-              <a id="agreeButton" href="#" class="btn btn-success float-right">Agree</a>
-              <a id="disagreeButton" href="#" class="btn btn-danger float-right">Disagree</a>
+              <a id="agreeButton" href="#" class="btn btn-light float-right">Agree</a>
+              <a id="disagreeButton" href="#" class="btn btn-dark float-right">Disagree</a>
               <!-- <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
                 <label class="form-check-label" for="inlineRadio2">Agree</label>
@@ -50,287 +55,280 @@
     <script>
       let questions = [
         {
-          "question": "My best ideas at work come from an interchange of ideas and sharing with others.",
+          "question": "My best ideas when fighting evil monsters come from an interchange of ideas and sharing with others.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "When I run a meeting, I am usually disciplined about following my prepared agenda.",
+          "question": "When planning our next move as Sailor Guardians, I am usually disciplined about following my prepared agenda.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "When handling a subordinate's development, I am most likely to  discuss a problem I have with his or her behavior.",
+          "question": "When handling (let's just say Usagi's) development, I am most likely to discuss a problem I have with her behavior.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "I prefer the place I work to be structured with clear rules and regulations.",
+          "question": "I prefer our secret lare to be structured with clear rules and regulations.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "I would rather have a supervisor with whom I have a lot of day-by-day interaction.",
+          "question": "I would rather work alongside a Moon Princess with whom I have a lot of day-by-day interaction.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "I prefer meetings where most time is spent on the application of the ideas discussed.",
+          "question": "I prefer our meetings where most time is spent on the application of the ideas discussed.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "I prefer a work environment where frequent differences of opinion breed interesting discussions and ideas.",
+          "question": "I prefer an environment where frequent differences of opinion breed interesting discussions and ideas.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "I prefer projects at work to be well-defined and planned out.",
+          "question": "I prefer projects and our dangerous missions to be well-defined and planned out.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "I prefer to spend my lunch hour eating with a group.",
+          "question": "I prefer to spend my lunch hour eating with the other sailor scouts.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "If my boss gives me a difficult task, I usually collect as much information as possible before starting.",
+          "question": "When faced with a difficult task, I usually collect as much information as possible before heading into battle.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "In a performance appraisal, I prefer my boss to write that I am intelligent and reasonable.",
+          "question": "In a performance appraisal, I'd prefer Luna and Artemis to write that I am intelligent and reasonable.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "I prefer to  plan my workday carefully in advance.",
+          "question": "I prefer to plan our missions carefully in advance instead of diving in head first.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "I more often prefer to keep my office door open.",
+          "question": "I more often prefer to keep my door open.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "When a new idea flashes into my mind, I usually like to test if carefully before I get excited.",
+          "question": "When a new idea flashes into my mind, I usually like to test if carefully before I get excited and tell the other Sailor Scouts.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "In a team meeting, I prefer to emphasize an analytical discussion of the facts.",
+          "question": "When talking with my fellow Sailor Scouts, I prefer to emphasize an analytical discussion of the facts.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "I prefer a job in which the rewards are seen clearly in regular periods.",
+          "question": "I prefer a mission in which the rewards are seen clearly.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "I dress for work so that other people notice and admire my clothing.",
+          "question": "I dress each day so that other people notice and admire my clothing (and me).",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "When I solve problems, I am more likely to  give most weight to the facts in front of me.",
+          "question": "When I solve problems, I am more likely to give most weight to the facts in front of me.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "If I have to confront colleagues or subordinates, I am usually interested in making sure I give them the facts accurately.",
+          "question": "If I have to confront my fellow scouts, I am usually interested in making sure I give them the facts accurately.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "I would rather have a boss who provides a lot of structure and organization.",
+          "question": "I would rather follow a leader who provides a lot of structure and organization.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "I prefer most of my jobs at work to be a continuing series of short tasks.",
+          "question": "I prefer most of my missions to be a continuing series of short tasks.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "When I write a report, I usually think first of  the details.",
+          "question": "When I write a report, I usually think first of the details instead of just going with the flow.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "When I have a decision to make at work, I usually reason it through regardless of my feelings.",
+          "question": "When I have a decision to make, I usually reason it through regardless of my feelings.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "I prefer my own office to be one in which things are olderly, organized, and systematic.",
+          "question": "I prefer to be one in my own area in which things are olderly, organized, and systematic.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "When I have lunch with my colleagues, I would rather talk about people.",
+          "question": "I would rather have my fellow sailor scouts trust me with practical problems to solve.",
+          "types": [
+            "S",
+            "N"
+          ]
+        },
+        {
+          "question": "When faced with a hard decision, I usually prefer to think things through.",
+          "types": [
+            "T",
+            "F"
+          ]
+        },
+        {
+          "question": "I prefer our missions while protecting Earth to be continuous and relatively predictable.",
+          "types": [
+            "J",
+            "P"
+          ]
+        },
+        {
+          "question": "When I have to organize and run a sailor scout meeting, I more often feel satisfied that I have the opportunity to lead.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "I would rather have my boss trust me with practical problems to solve.",
+          "question": "If I were asked to prepare a strategic plan, I would be more likely to emphasize what is practical now.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "When faced with a decision at work, I usually prefer to  think things through.",
+          "question": "When faced with a decision, I usually focus on the facts and figures above all.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "I prefer the work I do every day to  be continuous and relatively predictable.",
+          "question": "When given a mission, I usually prefer a clear statement of what is expected.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "When I have to organize and run a meeting, I more often feel satisfied that I have the opportunity to lead.",
+          "question": "I prefer to work alongside a large group of sailor guardians during our missions.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "If I were asked to prepare a strategic plan, I would be more likely to  emphasize what is practical now.",
+          "question": "When talking one-on-one, I am more likely to listen quietly and absorb details.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "When faced with a decision at work, I usually focus on the facts and figures above all.",
+          "question": "If someone argues with a decision I make, I usually remain firm.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "When my boss gives me a new project, I usually prefer a clear statement of what is expected.",
+          "question": "When I have made a tough choice, I usually am satisfied that it is done.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "I prefer to have a large group of colleagues at work.",
+          "question": "When I attend a outing with friends, I usually walk around and meet people I may not know well.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "In one-on-one meetings, I am more likely to  listen quietly and absorb details.",
+          "question": "I think my fellow sailor scouts see me more as a here-and-now person.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "If someone argues with a policy or decision I make, I usually remain firm.",
+          "question": "When I have long and complex information to read, I am more likely to be patient and study the details.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "When I have made a tough choice at work, I usually am satisfied that it is done.",
+          "question": "I prefer my environment to be comfortable, predictable, and stable.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "When I attend a company outing, I usually walk around and meet people I may not know well.",
-          "types": [
-            "E",
-            "I"
-          ]
-        },
-        {
-          "question": "I think my colleagues see me more as a here-and-now person.",
-          "types": [
-            "S",
-            "N"
-          ]
-        },
-        {
-          "question": "When I have a long and complex report to read, I am more likely to  be patient and study the details.",
-          "types": [
-            "T",
-            "F"
-          ]
-        },
-        {
-          "question": "I prefer my work environment to be  comfortable, predictable, and stable.",
-          "types": [
-            "J",
-            "P"
-          ]
-        },
-        {
-          "question": "My colleagues at work are more likely to describe me as  an energetic team player.",
+          "question": "My fellow scouts are more likely to describe me as  an energetic team player.",
           "types": [
             "E",
             "I"
@@ -344,322 +342,322 @@
           ]
         },
         {
-          "question": "I prefer to work with colleagues who rely heavily on logic.",
+          "question": "I prefer to hang with those who rely heavily on logic.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "If someone on my team is late with a scheduled task, I usually get impatient and annoyed.",
+          "question": "If a fellow sailor scout is late with a task or to a mission, I usually get impatient and annoyed.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "When I attend a training session, I am more likely to  participate openly and actively.",
+          "question": "When training my skills, I am more likely to participate openly and actively.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "When colleagues and subordinates present ideas to me, I am usually more interested in  immediately useful ideas.",
+          "question": "When any of the scouts present ideas to me, I am usually more interested in immediately useful ideas.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "If I have to deal with a colleague's feelings, I prefer to be  truthful even if I can't be tactful.",
+          "question": "If I have to deal with a scouts feelings, I prefer to be truthful even if I can't be tactful.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "I prefer projects that  have a clear ending date when I know they will be finished.",
+          "question": "I prefer missions that have a clear ending time when I know they will be finished.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "When I have a decision to make at work, I more often talk it over with a number of people before I decide.",
+          "question": "When I have a decision to make, I more often talk it over with a number of my friends before I decide.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "I prefer a job where I can  use my experience to work at familiar tasks.",
+          "question": "I prefer any type of mission where I can use my experience to tackle familiar hurdles instead of being put on the spot.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "When I am at a meeting and a difference of opinion gets heated, I usually defend the side I think is most logical.",
+          "question": "When I am at a meeting in our secret lare and a difference of opinion gets heated, I usually defend the side I think is most logical.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "When I get a new project, I usually prefer to  get to it and complete it as quickly as possible.",
+          "question": "When something comes up, I usually prefer to get to it and complete it as quickly as possible instead of procrastinating.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "I am more interested in  the actual tasks I am doing day-by-day.",
+          "question": "I am more interested in the actual things I am doing day-by-day.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "When I attend a training session, I usually prefer experiential processes.",
+          "question": "When I attend sailor guardian training, I usually prefer experiential processes.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "When I have a meeting with a colleague, I usually get through it quickly in a businesslike manner.",
+          "question": "When I have a meeting with my friends and fellow scouts, I usually get through it quickly in a businesslike manner. It's buisness, not personal",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "I would rather be in a job with  activities requiring me to reach a conclusion.",
+          "question": "I like engaging in activities requiring me to reach a conclusion.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "When I ask a colleague for advice or help, I am usually comfortable.",
+          "question": "When I ask a friend for advice or help, I am usually comfortable.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "In a meeting or when reading a report, I am more likely to  remember the facts presented.",
+          "question": "In a meeting about a mission, I am more likely to remember the facts presented.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "When colleagues ask my advice about a work matter, I more often guide them toward a decision based purely on logic.",
+          "question": "When my fellow scouts ask my advice about a matter, I more often guide them toward a decision based purely on logic.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "When I am in a meeting, I am usually more interested in  getting the job done as quickly as possible.",
+          "question": "I like getting a job done as quickly as possible.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "When I am interrupted in the middle of a tough job, I usually welcome the opportunity to talk to someone.",
+          "question": "When I am interrupted in the middle of doing something difficult, I usually welcome the opportunity to talk to someone. (Procrastination helps right?)",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "When I read a report, I usually go first to  the body of detailed information.",
+          "question": "When I read something informative, I usually go first to the body of detailed information.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "When I am putting forward a new idea at work, I more often remain firm about the correctness of it.",
+          "question": "When I am putting forward a new idea at among my fellow scouts, I more often remain firm about the correctness of it.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "If my boss insists that I schedule my workday, I feel satisfied I am organized.",
+          "question": "I feel satisfied when I am organized.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "When I am at a meeting and someone tells a joke, I usually laugh and think of one to tell.",
+          "question": "When someone tells a joke, I usually laugh and think of one to tell.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "In a performance appraisal, it would be more accurate if my boss said I was  practical.",
+          "question": "It would be more accurate to state I was practical.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "I am usually more interested in how my colleagues think about problems.",
+          "question": "I am usually more interested in how my fellow sailor scouts think about problems.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "When a new and unusual policy announcement is issued at work, I am usually annoyed or otherwise upset at the changes.",
+          "question": "I am usually annoyed or otherwise upset when a change happens.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "In a meeting, I usually speak out directly when I want to.",
+          "question": "When having a sailor meeting, I usually speak out directly when I want to.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "When I start a new project, I usually write a step-by-step plan early in the process.",
+          "question": "I like step-by-step plan early in the process when starting something new.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "When I hear a presentation from a colleague, I am more likely to be openly and intellectually critical.",
+          "question": "I am more likely to be openly and intellectually critical in response to things.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "If they couldn't be both, I would rather have colleagues who are  well-organized.",
+          "question": "I prefer to work alongside scots who are well-organized.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "I would prefer to work in a company where everyone works together in an open, active environment.",
+          "question": "I like an open and active environment where I can engage with everyone.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "I more often seek out work that applies my practical skills and nature.",
+          "question": "I more often seek out things that apply my practical skills and nature.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "When I have to make a decision at work, I am more likely to  analyze the situation logically without considering my values and feelings.",
+          "question": "When I have to make a decision, I am more likely to analyze the situation logically without considering my values and feelings.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "When I present my views in a meeting, I am usually decisive.",
+          "question": "When I present my views, I am usually decisive.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "When I need to pass on an idea or information, I prefer to  talk directly to people about it.",
+          "question": "When I need to pass on an idea or information, I prefer to talk directly to people about it.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "My leadership style is best described as  practical.",
+          "question": "When leading in anything my leadership style is best described as practical.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "In a performance appraisal meeting, I am usually more likely to  be frank and honest regardless of feelings.",
+          "question": "I am usually more likely to be frank and honest regardless of feelings.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "When I am discussing an important issue at a meeting, I usually try to reach a definite conclusion quickly.",
+          "question": "When I am discussing an important issue, I usually try to reach a definite conclusion quickly.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "I enjoy more a workday filled with variety and interactions with others.",
+          "question": "I enjoy a day filled with variety and interactions with others.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "I prefer a work situation that is stable with little change.",
+          "question": "I prefer situations that are stable with little change.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "My colleagues would be more likely to describe my behavior at work as  cool, calm, and objective.",
+          "question": "My fellow scouts are more likely to describe my behavior as cool, calm, and objective.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "At work, I prefer projects on which I work quickly to make a short deadline.",
+          "question": "I prefer projects and tasks that involve a short deadline.",
           "types": [
             "J",
             "P"
           ]
         },
         {
-          "question": "When I am in a meeting with colleagues and a high-ranking manager or executive comes in, I usually greet the person in a comfortable and friendly way.",
+          "question": "I usually greet the person in a comfortable and friendly way.",
           "types": [
             "E",
             "I"
           ]
         },
         {
-          "question": "When I think of my most important work assets, they are  more in the realm of the practical.",
+          "question": "When I think of my personal assets, they are more in the realm of the practical.",
           "types": [
             "S",
             "N"
           ]
         },
         {
-          "question": "In a training session or course, I prefer a trainer who depends more on precision and logic.",
+          "question": "I prefer to use an approach that relies on both precision and logic.",
           "types": [
             "T",
             "F"
           ]
         },
         {
-          "question": "I usually push my colleagues or subordinates for  quick decisions.",
+          "question": "I usually push my fellow sailor scouts to make quick decisions.",
           "types": [
             "J",
             "P"

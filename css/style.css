@@ -1,0 +1,45 @@
+/* Sailor Moon Main Page Styles */
+
+body {
+    background-image: url('../web/bg-details.png'), linear-gradient(#F8E0F0, #BDC7EF, #ADE2CE, #F2F3CB); /* Standard syntax (must be last) */
+    font-family: 'Inconsolata', monospace;
+}
+
+.logo {
+    margin: 20px 0;
+    width: 80%;
+}
+
+.container {
+    margin-bottom: 50px;
+}
+
+.card, .card-img-top {
+    border: none;
+    /* border: 5px solid #f06da5; */
+    border-radius: 0%;
+    box-shadow: 3px 4px #f06da5;
+}
+
+/* btns */
+
+.btn-light {
+    border: 3px solid #DBD4F0;
+    border-radius: 5%;
+}
+
+.btn-light:hover {
+    border: 3px solid #DBD4F0;
+}
+
+.btn-dark {
+    background-color: #02A7E0;
+    border: 3px solid #B9E5CE;
+    border-radius: 5%;
+    margin-right: 5px;
+}
+
+.btn-dark:hover {
+    background-color: #006e93;
+    border: 3px solid #B9E5CE;
+}
