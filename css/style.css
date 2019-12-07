@@ -1,7 +1,8 @@
 /* Sailor Moon Main Page Styles */
 
+
 body {
-    background-image: url('../web/bg-details.png'), linear-gradient(#F8E0F0, #BDC7EF, #ADE2CE, #F2F3CB); /* Standard syntax (must be last) */
+    background-image: url('../web/bg-details.png'); /* Standard syntax (must be last) */
     font-family: 'Inconsolata', monospace;
 }
 
@@ -15,22 +16,22 @@ body {
 }
 
 .container {
+    margin-top: 30px;
     margin-bottom: 50px;
+    background-color: #fff;
 }
 
 .card, .card-img-top {
     border: none;
-    /* border: 5px solid #f06da5; */
     border-radius: 0%;
-    /* box-shadow: 3px 4px #f06da5; */
 }
 
 /* nav */
 nav {
     font-family: 'Fredoka One', cursive;
     text-transform: uppercase;
-    margin-top: 20px;
 }
+
 
 nav a {
     color: #F06DA5;
@@ -44,7 +45,6 @@ nav a:hover {
 
 .nav-bg {
     background-color: #fff;
-    /* box-shadow: 3px 4px #f06da5; */
 }
 
 /* btns */
@@ -80,4 +80,75 @@ nav a:hover {
     font-weight: bold;
     text-decoration: none;
     color: #F069A3;
+}
+
+footer {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* Inner Page Personality Styles */
+.breakdown {
+    color: #784478;
+    font-weight: bold;
+}
+
+.heading {
+    color: #F079AC;
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+}
+
+.second-heading {
+    color: #CCCDEF;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sailor-star {
+   position: absolute;
+   right: 250px;
+}
+
+/* Paragraphs */
+.personality-paragraph p {
+    width: 70%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.first-paragraph {
+    color: #CB86CB;
+}
+
+.second-paragraph {
+    color: #D16794;
+}
+
+.third-paragraph {
+    color: #7F76A1;
+}
+
+.fourth-paragraph {
+    color: #CB86CB;
+}
+
+/* Footer */
+.page-credit {
+    margin-top: 100px;
+    padding-bottom: 50px;
+}
+
+
+
+/* CARDS PAGE */
+
+.card-row {
+    display: flex;
+    justify-content: space-evenly;
 }
