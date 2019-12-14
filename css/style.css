@@ -152,3 +152,63 @@ footer {
     display: flex;
     justify-content: space-evenly;
 }
+
+.cards {
+    width: 100%;
+}
+
+/* MBTI PAGE */
+
+.mbti {
+    width: 60%;
+}
+
+.banner {
+    width: 70%;
+}
+
+.mbti-paragraph {
+    width: 70%;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding-top: 40px; 
+}
+
+.sailor-moon-icons {
+    width: 70%;
+}
+
+.mbti-list {
+    list-style: none;
+}
+
+.types {
+    /* background-color: #e6e0fc; */
+    /* border: 1px solid #7f76a1; */
+}
+
+.types li {
+    border: 1px solid #7f76a1;
+    background-color: #e6e0fc;
+    padding: 10px;
+}
+
+.types li:hover {
+    background-color: #aa9be8;
+    color: #fff;
+}
+
+
+/* MEDIA QUERIES */
+/* @media (max-width: 540px){
+ 
+    .sailor-star {
+        display: block;
+        position: static;
+        right: 0;
+        background-color: purple;
+    }
+}
+     
+    } */
