@@ -111,11 +111,13 @@ footer {
 }
 
 .sailor-star {
-   position: absolute;
-   right: 250px;
+   margin-right: -150px;
 }
 
 /* Paragraphs */
+.personality-paragraph{
+    margin-top: -250px;
+}
 .personality-paragraph p {
     width: 70%;
     font-size: 15px;
@@ -201,14 +203,44 @@ footer {
 
 
 /* MEDIA QUERIES */
-/* @media (max-width: 540px){
- 
+@media (min-width: 992px ) and (max-width: 1199px){
+    .personality-paragraph{
+        margin-top: -100px;
+    }
+    .sailor-star {
+        width: 100%;
+        margin-right: -180px;
+    }
+}
+@media (min-width: 768px ) and (max-width: 991px){
+    .top-section{
+        flex-direction: column;
+    }
     .sailor-star {
         display: block;
         position: static;
-        right: 0;
-        background-color: purple;
+        width: 100%;
+    }
+    .personality-paragraph p{
+        width: 100%;
+    }
+    .personality-paragraph{
+        margin-top: 0px;
     }
 }
-     
-    } */
+@media (max-width: 767.98px){
+    .top-section{
+        flex-direction: column;
+    }
+    .sailor-star {
+        display: block;
+        position: static;
+        width: 100%;
+    }
+    .personality-paragraph p{
+        width: 100%;
+    }
+    .personality-paragraph{
+        margin-top: 0px;
+    }
+}
