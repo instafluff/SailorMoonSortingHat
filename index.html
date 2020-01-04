@@ -30,10 +30,13 @@
       <div id="questions">
           <img src="web/sailormooncast.jpg" class="card-img-top" alt="Sailor Moon Image">
         <div class="card">
-          
+
           <div class="card-body">
             <h5 id="q-title" class="card-title">[QUESTION]</h5>
             <p class="card-text justify">
+                <div>
+                    <img id="sailor-image" class="sailor-result" width="128px" src="../web/sailor-moon.png" alt="Sailor Result Image">
+                </div>
               <a id="agreeButton" href="#" class="btn btn-light float-right">Agree</a>
               <a id="disagreeButton" href="#" class="btn btn-dark float-right">Disagree</a>
               <!-- <div class="form-check form-check-inline">
@@ -685,22 +688,22 @@
       const qCount = 32;
       let currentQuestion = -1;
       let sailors = {
-        "ISTJ": { character: "Sailor Mercury", type: "The Examiner" },
-        "ISFJ": { character: "Sailor Pluto", type: "The Protector" },
-        "INFJ": { character: "Sailor Saturn", type: "The Counselor" },
-        "INTJ": { character: "Sailor Star Healer", type: "The Strategist" },
-        "ISTP": { character: "Sailor Uranus", type: "The Mechanic" },
-        "ISFP": { character: "Sailor Neptune", type: "The Artist" },
-        "INFP": { character: "Tuxedo Kamen", type: "The Healer" },
-        "INTP": { character: "Sailor Star Maker", type: "The Architect" },
-        "ESTP": { character: "Sailor Star Fighter", type: "The Promoter" },
-        "ESFP": { character: "Sailor Venus", type: "The Performer" },
-        "ENFP": { character: "Sailor Moon", type: "The Champion" },
-        "ENTP": { character: "Artemis", type: "The Visionary" },
-        "ESTJ": { character: "Luna", type: "The Supervisor" },
-        "ESFJ": { character: "Sailor Jupiter", type: "The Provider" },
-        "ENFJ": { character: "Sailor Chibimoon", type: "The Giver" },
-        "ENTJ": { character: "Sailor Mars", type: "The Commander" },
+        "ISTJ": { character: "Sailor Mercury", type: "The Examiner", image: "sailor-mercury.png" },
+        "ISFJ": { character: "Sailor Pluto", type: "The Protector", image: "sailor-pluto.png" },
+        "INFJ": { character: "Sailor Saturn", type: "The Counselor", image: "sailor-saturnn.png" },
+        "INTJ": { character: "Sailor Star Healer", type: "The Strategist", image: "star-healer.png" },
+        "ISTP": { character: "Sailor Uranus", type: "The Mechanic", image: "sailor-uranus.png" },
+        "ISFP": { character: "Sailor Neptune", type: "The Artist", image: "sailor-saturn.png" },
+        "INFP": { character: "Tuxedo Kamen", type: "The Healer", image: "tuxedo-mask.png" },
+        "INTP": { character: "Sailor Star Maker", type: "The Architect", image: "star-maker.png" },
+        "ESTP": { character: "Sailor Star Fighter", type: "The Promoter", image: "sailor-star.png" },
+        "ESFP": { character: "Sailor Venus", type: "The Performer", image: "sailor-venus.png" },
+        "ENFP": { character: "Sailor Moon", type: "The Champion", image: "sailormoon.png" },
+        "ENTP": { character: "Artemis", type: "The Visionary", image: "artemis.png" },
+        "ESTJ": { character: "Luna", type: "The Supervisor", image: "luna.png" },
+        "ESFJ": { character: "Sailor Jupiter", type: "The Provider", image: "sailor-jupiter.png" },
+        "ENFJ": { character: "Sailor Chibimoon", type: "The Giver", image: "chibi-moon.png" },
+        "ENTJ": { character: "Sailor Mars", type: "The Commander", image: "sailor-mars.png" },
       };
       let results = {
         "E": 0,
@@ -712,10 +715,12 @@
         "J": 0,
         "P": 0,
       };
+      let resultType = "";
       let selectedQuestions = questions.sort( x => Math.random() * 2 - 1 ).slice( 0, qCount );
-      console.log( selectedQuestions );
+      // console.log( selectedQuestions );
+      document.querySelector( "#sailor-image" ).style.display = "none";
       document.querySelector( "#agreeButton" ).onclick = () => {
-        if( currentQuestion < qCount - 1 ) {
+        if( currentQuestion < qCount ) {
           nextQuestion( 0 );
         }
         else {
@@ -723,7 +728,12 @@
         }
       };
       document.querySelector( "#disagreeButton" ).onclick = () => {
-        nextQuestion( 1 );
+        if( currentQuestion < qCount ) {
+          nextQuestion( 1 );
+        }
+        else {
+          location.href = `/mbti/${resultType}.html`;
+        }
       };
       // document.querySelector( "#nextButton" ).onclick = () => {
       //   nextQuestion();
@@ -732,22 +742,24 @@
         if( choice >= 0 ) {
           // Add result
           results[ selectedQuestions[ currentQuestion ].types[ choice ] ]++;
-          console.log( results );
+          // console.log( results );
         }
-        if( currentQuestion < qCount - 1 ) {
-          currentQuestion++;
-          document.querySelector( "#q-title" ).innerText = selectedQuestions[ currentQuestion ].question;
+        currentQuestion++;
+        if( currentQuestion < qCount ) {
+          document.querySelector( "#q-title" ).innerText = `(${currentQuestion+1} of ${qCount}) ${selectedQuestions[ currentQuestion ].question}`;
         }
         else {
           // Calculate results
-          let type = ( results[ "E" ] > results[ "I" ] ? "E" : "I" ) +
+          resultType = ( results[ "E" ] > results[ "I" ] ? "E" : "I" ) +
                      ( results[ "S" ] > results[ "N" ] ? "S" : "N" ) +
                      ( results[ "T" ] > results[ "F" ] ? "T" : "F" ) +
                      ( results[ "J" ] > results[ "P" ] ? "J" : "P" );
-          console.log( type, sailors[ type ] );
-          document.querySelector( "#q-title" ).innerText = `You are: ${type} - ${sailors[ type ].character} (${sailors[ type ].type})`;
+          // console.log( type, sailors[ type ] );
+          document.querySelector( "#q-title" ).innerText = `You are: ${resultType} - ${sailors[ resultType ].character} (${sailors[ resultType ].type})`;
           document.querySelector( "#agreeButton" ).innerText = "Take the quiz again";
-          document.querySelector( "#disagreeButton" ).style.visibility = "hidden";
+          document.querySelector( "#disagreeButton" ).innerText = "Read More About Your Personality";
+          document.querySelector( "#sailor-image" ).style.display = "block";
+          document.querySelector( "#sailor-image" ).setAttribute( "src", `../web/${sailors[ resultType ].image}` );
         }
       }
       nextQuestion( -1 );
