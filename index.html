@@ -35,7 +35,7 @@
             <h5 id="q-title" class="card-title">[QUESTION]</h5>
             <p class="card-text justify">
                 <div>
-                    <img id="sailor-image" class="sailor-result" width="128px" src="../web/sailor-moon.png" alt="Sailor Result Image">
+                    <img id="sailor-image" class="sailor-result" width="128px" src="web/sailor-moon.png" alt="Sailor Result Image">
                 </div>
               <a id="agreeButton" href="#" class="btn btn-light float-right">Agree</a>
               <a id="disagreeButton" href="#" class="btn btn-dark float-right">Disagree</a>
@@ -759,7 +759,7 @@
           document.querySelector( "#agreeButton" ).innerText = "Take the quiz again";
           document.querySelector( "#disagreeButton" ).innerText = "Read More About Your Personality";
           document.querySelector( "#sailor-image" ).style.display = "block";
-          document.querySelector( "#sailor-image" ).setAttribute( "src", `../web/${sailors[ resultType ].image}` );
+          document.querySelector( "#sailor-image" ).setAttribute( "src", `web/${sailors[ resultType ].image}` );
         }
       }
       nextQuestion( -1 );
